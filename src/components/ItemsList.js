@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromStore, updateStore } from '../actions';
 import ListItem from './ListItem';
+import Search from './Search';
+
 const sortDirectionsEnum = ['desc', 'asc'] 
 
 function compare(a, b, param, direction) {
@@ -14,7 +16,7 @@ function compare(a, b, param, direction) {
   return 0;
 }
 
-function BookList() {
+function ItemsList() {
   const dataSource = useSelector(selector => selector.dataSource)
   const dispatch = useDispatch()
   const columnTitles = ['title', 'author', 'description', 'rating']
@@ -42,13 +44,16 @@ function BookList() {
   ))
 
   return (
-    <div className="BookList">
+    <div className="ItemsList">
+      <Search />
       <button onClick={() => setSortDirection(sortDirectionsEnum[0])}>Descending order</button>
       <button onClick={() => setSortDirection(sortDirectionsEnum[1])}>Ascending order</button>
-      { columns }
+      <div>
+        { columns }
+      </div>
       { items }
     </div>
   );
 }
 
-export default BookList
+export default ItemsList

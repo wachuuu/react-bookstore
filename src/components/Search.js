@@ -22,7 +22,7 @@ function Search() {
   }, [search, allItems, dispatch])
 
   return (
-    <div className='Search'>
+    <div className="Search">
       <input type="search" onChange={e => setSearch(e.target.value)}></input>
     </div>
   )

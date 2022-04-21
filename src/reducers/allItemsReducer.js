@@ -6,7 +6,8 @@ const allItemsReducer = (state = books, action) => {
   let index
   switch (action.type) {
     case actions.ADD_NEW:
-      newState.push(action.payload)
+      const newId = Math.max.apply(Math, newState.map(item => item.id)) + 1
+      newState.push({...action.payload, id: newId})
       return newState
     case actions.REMOVE:
       index = state.findIndex(item => item.id === action.payload.id)

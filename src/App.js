@@ -1,12 +1,12 @@
 import './App.css';
-import BookList from './components/BookList';
-import Search from './components/Search';
+import AddItem from './components/AddItem';
+import ItemsList from './components/ItemsList';
 
 function App() {  
   return (
     <div className="App">
-      <Search />
-      <BookList />
+      <AddItem />
+      <ItemsList />
      </div>
   );
 }
