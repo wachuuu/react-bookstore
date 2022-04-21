@@ -16,7 +16,14 @@ export const updateStore = (data) => {
 
 export const removeFromStore = (data) => {
   return {
-    type: actions.DELETE,
+    type: actions.REMOVE,
+    payload: data
+  }
+}
+
+export const updateDataSource = (data) => {
+  return {
+    type: actions.UPDATE_DS,
     payload: data
   }
 }
