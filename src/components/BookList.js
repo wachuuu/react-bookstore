@@ -31,7 +31,7 @@ function BookList() {
     dispatch(removeFromStore(item))
   }
 
-  const items = dataSource
+  const items = [...dataSource]
     .sort((a, b) => compare(a, b, sortBy, sortDirection))
     .map(item => (
       <ListItem deleteItem={deleteItem} editRating={editItemRating} item={item} key={item.id} />

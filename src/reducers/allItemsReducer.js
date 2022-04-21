@@ -2,18 +2,25 @@ import * as actions from '../actions/actionTypes';
 import books from '../json/books.json';
 
 const allItemsReducer = (state = books, action) => {
+  let newState = [...state]
+  let index
   switch (action.type) {
     case actions.ADD_NEW:
-      console.log('[allItemsReducer] addnew', [...state, action.payload], action);
-      return [...state, action.payload]
+      newState.push(action.payload)
+      return newState
     case actions.REMOVE:
-      console.log('[allItemsReducer] remove', state, action);
-      return state;
+      index = state.findIndex(item => item.id === action.payload.id)
+      if (index >= 0) {
+        newState.splice(index, 1)
+      }
+      return newState;
     case actions.UPDATE:
-      console.log('[allItemsReducer] update', state, action);
-      return state;
+      index = state.findIndex(item => item.id === action.payload.id)
+      if (index >= 0) {
+        newState[index] = action.payload
+      }
+      return newState;
     default:
-      console.log('[allItemsReducer] default', state, action)
       return state;
   }
 }
