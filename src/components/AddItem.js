@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addToStore } from "../actions"
 
@@ -21,7 +21,6 @@ function AddItem() {
   }
 
   const handleChange = (e) => {
-    console.log('input', e.target.id, e.target.value)
     const val = e.target.value
     switch (e.target.id) {
       case 'author':
@@ -40,10 +39,6 @@ function AddItem() {
     }
   }
 
-  useEffect(() => {
-    console.log('change', form)
-  })
-
   return (
     <div className="AddItem">
       <form onSubmit={handleSubmit}>
@@ -61,7 +56,6 @@ function AddItem() {
 
         <input type="submit" value="Save" />
       </form>
-      AddItem works!
     </div>
   )
 }
