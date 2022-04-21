@@ -1,3 +1,4 @@
 export const ADD_NEW = 'add-new';
-export const DELETE = 'delete';
+export const CLEAR = 'clear';
+export const REMOVE = 'remove';
 export const UPDATE = 'update';
