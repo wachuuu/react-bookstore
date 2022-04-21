@@ -1,0 +1,43 @@
+.AddItem {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form .inline {
+  display: flex;
+  align-items: flex-end;
+}
+
+form .inline > *{
+  margin: .5rem 2rem .5rem 0;
+  color: gray;
+}
+
+.thumbnail {
+  margin-top: .5rem;
+}
+
+.submit {
+  margin: .5rem 0;
+}
+
+.close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #1976d2;
+  background: rgb(213, 222, 255);
+  border-radius: 50%;
+}

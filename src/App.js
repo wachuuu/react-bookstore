@@ -1,12 +1,15 @@
 import './App.css';
 import AddItem from './components/AddItem';
-import ItemsList from './components/ItemsList';
+import List from './components/List';
 
 function App() {  
   return (
     <div className="App">
-      <AddItem />
-      <ItemsList />
+      <div className="content">
+        <h1>My Bookstore</h1>
+        <AddItem />
+        <List />
+      </div>
      </div>
   );
 }

@@ -1,6 +1,19 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { addToStore } from "../actions"
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import { Button } from "@mui/material";
+import Rating from '@mui/material/Rating';
+import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToStore } from "../actions";
+import './AddItem.css';
+
+
+const Input = styled('input')({
+  display: 'none',
+});
 
 const emptyItem = {
   id: null,
@@ -13,6 +26,7 @@ const emptyItem = {
 function AddItem() {
 
   const [form, setForm] = useState(emptyItem)
+  const [visible, setVisible] = useState(false)
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
@@ -24,40 +38,89 @@ function AddItem() {
     const val = e.target.value
     switch (e.target.id) {
       case 'author':
-        setForm({...form, author: val})
+        setForm({ ...form, author: val })
         break
       case 'title':
-        setForm({...form, title: val})
+        setForm({ ...form, title: val })
         break
       case 'description':
-        setForm({...form, description: val})
-        break
-      case 'rating':
-        setForm({...form, rating: val})
+        setForm({ ...form, description: val })
         break
       default:
+        if (isNaN(val)) break;
+        setForm({ ...form, rating: +val })
+        break
     }
   }
 
-  return (
-    <div className="AddItem">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="author">Author</label>
-        <input id="author" onChange={handleChange}></input>
+  if (visible) {
+    return (
+      <div className="AddItem">
+        <CloseIcon className="close"
+          sx={{ fontSize: 25 }}
+          onClick={() => setVisible(false)} />
 
-        <label htmlFor="title">Title</label>
-        <input id="title" onChange={handleChange}></input>
+        <form>
+          <div className="inline">
 
-        <label htmlFor="description">Description</label>
-        <input id="description" onChange={handleChange}></input>
+            <TextField className="input"
+              size="small"
+              id="title"
+              label="Title"
+              onChange={handleChange} />
 
-        <label htmlFor="rating">Rating</label>
-        <input id="rating" onChange={handleChange}></input>
+            <TextField className="input"
+              size="small"
+              id="author"
+              label="Author"
+              onChange={handleChange} />
 
-        <input type="submit" value="Save" />
-      </form>
-    </div>
-  )
+            <div>
+              <div><small>Your rate</small></div>
+              <Rating
+                id="rating"
+                onChange={handleChange} />
+            </div>
+          </div>
+
+          <TextField className="input"
+            id="description"
+            label="Description"
+            multiline
+            rows={3}
+            onChange={handleChange} />
+
+          <div className="thumbnail">
+            <label htmlFor="thumbnail">
+              <Input accept="image/*" id="thumbnail" multiple type="file" />
+              <Button variant="outlined" component="span" startIcon={<PhotoCamera />}>
+                Upload thumbnail
+              </Button>
+            </label>
+          </div>
+        </form>
+
+        <div className="submit">
+          <Button
+            onClick={handleSubmit}
+            variant="contained">
+            Add
+          </Button>
+        </div>
+      </div>
+    )
+  } else {
+    return (
+      <div className="AddItem">
+        <Button
+          variant="contained"
+          onClick={() => setVisible(true)}
+          startIcon={<AddIcon />}>
+          Add new book
+        </Button>
+      </div>
+    )
+  }
 }
 
 export default AddItem

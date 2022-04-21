@@ -1,0 +1,44 @@
+.ListItem {
+  position: relative;
+  align-items: center;
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  background: #ccc;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+}
+
+.title {
+  margin-right: 1rem;
+  margin-bottom: .5rem;
+}
+
+.author span {
+  color: gray;
+}
+
+.delete {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: red;
+}

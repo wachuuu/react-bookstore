@@ -1,0 +1,44 @@
+.options {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 350px;
+}
+
+.order-container p, .search-container p {
+  margin: .5rem 0;
+  align-self: flex-start;
+  color: gray;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-btn {
+  cursor: pointer;
+  margin: 0 .2rem;
+}
+
+.arrow-btn:first-of-type {
+  margin-left: 1rem;
+}
+
+.active {
+  background-color: rgb(213, 222, 255);
+  border-radius: 50%;
+}

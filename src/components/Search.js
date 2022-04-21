@@ -1,6 +1,8 @@
+import TextField from '@mui/material/TextField';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDataSource } from '../actions';
+
 
 function Search() {
   const allItems = useSelector(selector => selector.allItems)
@@ -23,7 +25,11 @@ function Search() {
 
   return (
     <div className="Search">
-      <input type="search" onChange={e => setSearch(e.target.value)}></input>
+      <TextField fullWidth 
+        type="search"
+        size="small"
+        placeholder="Search tilte, author etc"
+        onChange={e => setSearch(e.target.value)} />
     </div>
   )
 }
