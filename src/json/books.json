@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Gibson",
+    "author": "Dummy",
+    "description": "This is a guitar, not a book dummy",
+    "rating": 1
+  },
+  {
+    "title": "Gibson2",
+    "author": "Dummy2",
+    "description": "This is a guitar, not a book dummy",
+    "rating": 2
+  },
+  {
+    "title": "Gibson3",
+    "author": "Dummy3",
+    "description": "This is a guitar, not a book dummy",
+    "rating": 5
+  },
+  {
+    "title": "Gibso4",
+    "author": "Dummy4",
+    "description": "This is a guitar, not a book dummy",
+    "rating": 3
+  }
+]
