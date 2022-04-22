@@ -20,12 +20,14 @@ const emptyItem = {
   title: null,
   author: null,
   description: null,
-  rating: null
+  rating: null,
+  thumbnail: null
 }
 
 function AddItem() {
 
   const [form, setForm] = useState(emptyItem)
+  const [filename, setFilename] = useState('')
   const [visible, setVisible] = useState(false)
   const dispatch = useDispatch()
 
@@ -51,6 +53,11 @@ function AddItem() {
         setForm({ ...form, rating: +val })
         break
     }
+  }
+
+  const handleImage = (e) => {
+    setFilename(e.target.files[0].name)
+    setForm({ ...form, thumbnail: URL.createObjectURL(e.target.files[0]) })
   }
 
   if (visible) {
@@ -92,11 +99,17 @@ function AddItem() {
 
           <div className="thumbnail">
             <label htmlFor="thumbnail">
-              <Input accept="image/*" id="thumbnail" multiple type="file" />
+              <Input accept="image/*" id="thumbnail" multiple type="file" onChange={handleImage} />
               <Button variant="outlined" component="span" startIcon={<PhotoCamera />}>
                 Upload thumbnail
               </Button>
             </label>
+            {filename &&
+              <div className="file-info">
+                <span>Uploaded file: </span>
+                {filename}
+              </div>
+            }
           </div>
         </form>
 

@@ -15,13 +15,23 @@ form .inline {
   align-items: flex-end;
 }
 
-form .inline > *{
+form .inline > * {
   margin: .5rem 2rem .5rem 0;
   color: gray;
 }
 
 .thumbnail {
   margin-top: .5rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.file-info {
+  margin-left: 1rem;
+}
+
+.file-info span {
+  color: gray;
 }
 
 .submit {

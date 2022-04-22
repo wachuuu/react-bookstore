@@ -15,7 +15,7 @@ function ListItem(props) {
   return (
     <div className="ListItem">
       <div className="image">
-        Image
+        <img src={props.item.thumbnail} alt='' />
       </div>
 
       <div className="info">

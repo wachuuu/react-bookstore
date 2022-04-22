@@ -4,27 +4,31 @@
     "title": "Dune",
     "author": "Frank Herbert",
     "description": "Dune is a 1965 epic science fiction novel by American author Frank Herbert, originally published as two separate serials in Analog magazine. It tied with Roger Zelazny's This Immortal for the Hugo Award in 1966 and it won the inaugural Nebula Award for Best Novel. It is the first installment of the Dune saga. In 2003, it was described as the world's best-selling science fiction novel.",
-    "rating": 1
+    "rating": 1,
+    "thumbnail": "./Dune.jpg"
   },
   {
     "id": 2,
     "title": "Sword of Destiny",
     "author": "Andrzej Sapkowski",
     "description": "Sword of Destiny (Polish: Miecz przeznaczenia) is the first published (in Polish) of the two collections of short stories (the other being The Last Wish), both preceding the main Witcher Saga. The stories were written by Polish fantasy author Andrzej Sapkowski. The first Polish edition was published in 1992; the English edition was published in the UK by Gollancz in 2015.",
-    "rating": 2
+    "rating": 2,
+    "thumbnail": "./Sword-of-destiny.jpg"
   },
   {
     "id": 3,
     "title": "Nineteen Eighty-Four (1984)",
     "author": "George Orwell",
     "description": "Nineteen Eighty-Four (also stylised as 1984) is a dystopian social science fiction novel and cautionary tale written by English writer George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime. Thematically, it centres on the consequences of totalitarianism, mass surveillance and repressive regimentation of people and behaviours within society.",
-    "rating": 5
+    "rating": 5,
+    "thumbnail": "./1984.jpg"
   },
   {
     "id": 4,
     "title": "Mindf*ck",
     "author": "Christopher Wylie",
     "description": "What if you could target the weakest with rumours that only they saw? In 2016, an obscure British military contractor turned the world upside down. Funded by a billionaire on a crusade to start his own far-right insurgency, Cambridge Analytica combined psychological research with private Facebook data to make an invisible weapon with the power to change what voters perceived as real.",
-    "rating": 3
+    "rating": 3,
+    "thumbnail": "./Mindfck.jpg"
   }
 ]

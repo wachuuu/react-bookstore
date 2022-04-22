@@ -17,6 +17,12 @@
   background: #ccc;
 }
 
+.image img {
+  width: 100px;
+  height: 150px;
+  object-fit: contain;
+}
+
 .header {
   display: flex;
   align-items: baseline;
